@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+# initializes variable “number” to empty string
+number=""
+# initializes variable "base" 
+base = ""
+#starts a loop if base is not a number
+while(not(base.isnumeric())):
+# asks user for the base they want to use
+    base = input("what is the base? ")
+# converts "base" as a string into an integer with the variable basenum
+basenum = int(base)
+#starts the while loop, as long as "number" isnt numeric
+while(not(number.isnumeric())):
+# asks “what is the decimal to convert?” And promts user for input
+    number = input("What is the decimal to convert? ")  
+# initializes the variialbe "tempnumb" and turns "number" from a string into an integer
+tempnumb = int(number)
+# initializes the variable "output" as an empty string
+output = ""
+# starts a while loop as long as "tempnum" is greater than zero
+while(tempnumb > 0):
+    #defines tempout as tempnum modulo basenum
+    tempout = tempnumb%basenum
+    # this line sets "tempnumb" to an integer that is the input integer divided by the variable basenum
+    tempnumb = int(tempnumb / basenum)
+    #creates an if conditional, where tempout is less than 10 
+    if (tempout < 10):
+        #defines output as, tempout and turns tempout into a string
+        output = str(tempout) + output
+    #creates an else condition 
+    else:
+        #creates a dictionary where nunbers 10-15 are listed as letters A-F
+        answer = {10:"A",11:"B",12:"C",13:"D",14:"E",15:"F"}
+        #changes the output to letters
+        output = answer[tempout] + output 
+#prints the converted number
+print(output)
+

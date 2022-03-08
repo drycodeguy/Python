@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+inventory={"buns":75,"burger patty":300,"cheese slices":500, "tomato slice":175,"Pickle wedge":325}
+single={"buns":1,"burger patty":1,"cheese slices":1,"tomato slice":1,"Pickle wedge":2}
+double={"buns":1,"burger patty":2,"cheese slices":2,"tomato slice":1,"Pickle wedge":2}
+
+order = ""
+
+
+singleburgers=int(input("how many singles"))
+doubleburgers=int(input("how many doubles"))
+
+for item in inventory.keys():
+    inventory[item] -= singleburgers*single[item]       
+    inventory[item] -= doubleburgers*double[item]

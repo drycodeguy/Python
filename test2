@@ -1,0 +1,9 @@
+#!/usr/python3
+# ask the user for a base
+input("what the fuck is it?  ")
+# ask the user for a number
+input("what the fuck is the other thing? ")
+# convert that number from the base to decimal
+
+number = int(binary,base)
+print(number)
