@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#Amos Struthers
+
 
 #imports paramiko and the sub process
 import paramiko 
