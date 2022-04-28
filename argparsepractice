@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+#arg parse implementation practice
+import sys 
+import re
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-p", "--phone", help="find phone numbers in data")
+parser.add_argument("-e", "--email", help="find emails in data")
+args = parser.parse_args()
+with open(sys.argv[2], 'r') as my_file:
+#text = open("clean.txt")
+    res = []
+    for line in my_file:
+        if args.email:
+            #print("not a valid mail server")
+            matches = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', line)
+            for x in matches:
+                res.append(x)
+        elif args.phone:
+            matches = re.findall(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})', line)
+            #print("the number you are trying to reach has been disconnected")
+            for x in matches:
+                res.append(x)
+        else:
+            print('no valid search parameters')
+        print(res)
+
+
+
+
+"""
+
+import argparse
+parser = argparse.ArgumentParser('parser-name')
+parser.add_argument("-f","--flag",action="store_true",help="just a flag argument")
+
+print()
+
+"""
